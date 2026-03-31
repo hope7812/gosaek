@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고색고 동영상 삽입 03.17</title>
+</head>
+<body>
+
+<form>
+    이름 : <input type="text" name="uname"><br>
+    아이디 : <input type="text" name="uid"><br>
+    비밀번호 : <input type="password" name="upw"><br>
+    연락처 : <input type="text" name="uphone1" size="2">-<input type="text" name="uphone2" size="2">-<input type="text" name="uphone3" size="2"><br>
+    사진 : <input type="file" name="upic"><br>
+    성별 : <input type="radio" name="gender" value="m">남, <input type="radio" name="gender" value="w">여, <br>
+    사용언어 : <input type="checkbox" name="lan" value="kor" checked="checked">한국어, 
+            <input type="checkbox" name="lan" value="eng">영어,
+            <input type="checkbox" name="lan" value="chi">중국어,<br>
+    자기소개 : <textarea name="intro" rows="10" cols="50"></textarea><br>
+국적
+<select>
+    <option>Korea</option>
+    <option>USA</option>
+    <option>China</option>
+</select><br>
+최애 음식
+<select multiple="multiple">
+    <option>김치</option>
+    <option>탕수육</option>
+    <option>피자</option>
+    <option>치킨</option>
+</select>
+<input type="submit"> <br>
+
+
+
+</form>
+    <video controls="controls"> 
+    <source src="video/411.mp4" type="video/mp4">
+    </video>
+    <video src="video/411.mp4" type="video/mp4" controls="controls"></video>
+
+</body>
+</html>
