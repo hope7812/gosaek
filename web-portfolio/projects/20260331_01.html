@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style>
+            ul>li {
+                font-size: 20px;
+                font-weight: bold;
+                color: orange;
+            }
+            li:hover {
+                color: blue;
+            }
+            input:focus {
+                border:2px solid #ff0000;
+                padding:10px;
+            }
+            input:enabled {
+                color: #00ff00;
+                font-weight: bold;
+            }
+            input:disabled {
+                color: #ff0000;
+                
+            }
+            .top-header{
+          width:100%;
+          background:#fff;
+          padding:18px 20px 10px;
+        }
+
+        .header-inner{
+          display:flex;
+          justify-content:space-between;
+          align-items:center;
+        }
+
+        .back-btn{
+          background:#bdbdbd;
+          color:#555;
+          border:none;
+          border-radius:10px;
+          padding:12px 18px;
+         font-size:16px;
+         font-weight:600;
+         cursor:pointer;
+        }
+
+        .title{
+          font-size:20px;
+          font-weight:700;
+          color:#111;
+        }
+
+        .dashed-line{
+             margin-top:10px;
+             border-bottom:2px dashed #bdbdbd;
+        }
+        </style>
+    </head>
+    <body>
+
+    <div class="top-header">
+
+    <div class="header-inner">
+
+        <button class="back-btn" onclick="location.href='../index.html'">
+        ← 메인페이지
+        </button>
+
+        <div class="title">
+          3월 31일 파일
+        </div>
+
+    </div>
+
+    <div class="dashed-line"></div>
+
+    </div>
+    
+    <div>
+        <ul>
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+            <li>menu5</li>
+        </ul>
+    </div>
+    <div>
+        <form>
+            이름 : <input type="text" name="uname"/><br />
+            아이디 : <input type="text" name="uid"/><br />
+            비밀번호 : <input type="password" name="upw" value="12345" disabled="disabled"/><br />
+        </form>
+    </div>
+    
+    </body>
+</html>

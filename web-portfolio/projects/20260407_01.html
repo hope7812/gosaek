@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>display 프로퍼티</title>
+
+<style>
+    /* div {
+        border: 2px solid yellowgreen;
+        color: blue;
+        background: aliceblue;
+    } */
+    span {
+        border: 3px dotted red;
+        background: yellow;
+    }
+    .top-header{
+          width:100%;
+          background:#fff;
+          padding:18px 20px 10px;
+        }
+
+        .header-inner{
+          display:flex;
+          justify-content:space-between;
+          align-items:center;
+        }
+
+        .back-btn{
+          background:#bdbdbd;
+          color:#555;
+          border:none;
+          border-radius:10px;
+          padding:12px 18px;
+         font-size:16px;
+         font-weight:600;
+         cursor:pointer;
+        }
+
+        .title{
+          font-size:20px;
+          font-weight:700;
+          color:#111;
+        }
+
+     .dashed-line{
+         margin-top:10px;
+         border-bottom:2px dashed #bdbdbd;
+        }
+</style>
+
+</head>
+
+<body>
+
+    <div class="top-header">
+
+    <div class="header-inner">
+
+        <button class="back-btn" onclick="location.href='../index.html'">
+        ← 메인페이지
+        </button>
+
+        <div class="title">
+          4월 07일 파일
+        </div>
+
+    </div>
+
+    <div class="dashed-line"></div>
+
+    </div>
+
+<h3>인라인, 인라인 블록, 블록</h3>
+
+<hr>
+
+나는 <div style="display:none">
+
+		div(none)</div>입니다.<br><br>
+
+나는 <div style="display:inline">
+
+		div(inline)</div> 입니다.<br><br>
+
+나는 <div style="display:inline-block; height:50px">
+
+		div(inline-block)</div> 입니다.<br><br>
+
+나는 <div>div<span style="display:block">
+
+		span(block)</span> 입니다.
+
+	</div>
+
+</body>
+
+</html>
+

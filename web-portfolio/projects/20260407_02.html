@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>relative 배치</title>
+
+<style>
+    div {
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+        border: 1px solid lightgray;
+        text-align: center;
+        color: white;
+        background: red;
+    }
+
+    #down:hover {
+        position: fixed;
+        left: 20px;
+        top: 20px;
+        background: green;
+    }
+    #up:hover {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        background: green;
+    }
+    .top-header{
+          width:100%;
+          background:#fff;
+          padding:18px 20px 10px;
+        }
+
+        .header-inner{
+          display:flex;
+          justify-content:space-between;
+          align-items:center;
+        }
+
+        .back-btn{
+          background:#bdbdbd;
+          color:#555;
+          border:none;
+          border-radius:10px;
+          padding:12px 18px;
+         font-size:16px;
+         font-weight:600;
+         cursor:pointer;
+        }
+
+        .title{
+          font-size:20px;
+          font-weight:700;
+          color:#111;
+        }
+
+     .dashed-line{
+         margin-top:10px;
+         border-bottom:2px dashed #bdbdbd;
+        }
+</style>
+
+</head>
+
+<body>
+
+    <div class="top-header">
+
+    <div class="header-inner">
+
+        <button class="back-btn" onclick="location.href='../index.html'">
+        ← 메인페이지
+        </button>
+
+        <div class="title">
+          4월 07일 파일
+        </div>
+
+    </div>
+
+    <div class="dashed-line"></div>
+
+    </div>
+
+<h3>상대 배치, relative</h3>
+
+<hr>
+
+	<div>T</div>
+
+	<div id="down">h</div>
+
+	<div >a</div>
+
+	<div>n</div>
+
+	<div id="up">k</div>
+
+	<div>s</div>
+
+</body>
+
+</html>
+

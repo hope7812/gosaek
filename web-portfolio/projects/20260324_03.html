@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style>
+            #header {
+                width: 520px;
+                background-color: yellow;
+                border: 1px solid gray;
+                text-align: center;
+            }
+            #footer {
+                width: 520px;
+                background-color: yellowgreen;
+                border: 3px solid gray;
+                text-align: center;
+            }
+            #wrap {
+                width:520px;
+                background-color: aqua;
+                border: 2px solid grey;
+                text-align: center;
+                overflow: hidden;
+            }
+            #content {
+                width: 350px;
+                border: 1px solid red;
+                float: left;
+            }
+            #side_banner{
+                border: 1px solid red;
+                float: left;
+            }
+            ul li.menu{
+                color: brown;
+                font-weight: bold;
+                font-size: 30px;
+            }
+            .top-header{
+                width:100%;
+                background:#fff;
+                padding:18px 20px 10px;
+            }
+
+            .header-inner{
+                display:flex;
+                justify-content:space-between;
+                 align-items:center;
+            }
+
+            .back-btn{
+                background:#bdbdbd;
+                color:#555;
+                border:none;
+                border-radius:10px;
+                padding:12px 18px;
+                font-size:16px;
+                font-weight:600;
+                cursor:pointer;
+            }
+
+            .title{
+                font-size:20px;
+                font-weight:700;
+                color:#111;
+            }
+
+            .dashed-line{
+                margin-top:10px;
+                border-bottom:2px dashed #bdbdbd;
+            }
+        </style>
+    </head>
+    <body>
+
+    <div class="top-header">
+
+    <div class="header-inner">
+
+        <button class="back-btn" onclick="location.href='../index.html'">
+        ← 메인페이지
+        </button>
+
+        <div class="title">
+          3월 24일 파일
+        </div>
+
+    </div>
+
+    <div class="dashed-line"></div>
+
+    </div>
+    
+    <div id="header">
+        <h1>HEADER</h1>
+    </div>
+
+    <div id="wrap">
+        <div id="content">
+            <h1>CONTENT</h1>
+            <ul>
+                <li class="menu">menu1</li>
+                <li>menu2</li>
+                <li class="menu">menu3</li>
+                <li>menu4</li>
+                <li class="menu">menu5</li>
+            </ul>
+            <ol>
+                <li class="menu">menu1</li>
+                <li>menu2</li>
+                <li class="menu">menu3</li>
+                <li>menu4</li>
+                <li class="menu">menu5</li>
+            </ol>
+        </div>
+        <div id="side_banner">
+            <h1>BANNER</h1>
+            <a href="https://gosaek-h.goesw.kr/gosaek-h/main.do" target="_blank"><img src="https://gosaek-h.goesw.kr/images/web/gosaek-h/common/logo.png"></a>
+        </div>
+    </div>
+
+    <div id="footer">
+        <h1>FOOTER</h1>
+    </div>
+    
+    </body>
+</html>

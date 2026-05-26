@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>star</title>
+<style>
+    .top-header{
+  width:100%;
+  background:#fff;
+  padding:18px 20px 10px;
+}
+
+.header-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.back-btn{
+  background:#bdbdbd;
+  color:#555;
+  border:none;
+  border-radius:10px;
+  padding:12px 18px;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.title{
+  font-size:20px;
+  font-weight:700;
+  color:#111;
+}
+
+.dashed-line{
+  margin-top:10px;
+  border-bottom:2px dashed #bdbdbd;
+}
+</style>
+</head>
+
+<body>
+
+    <div class="top-header">
+
+    <div class="header-inner">
+
+        <button class="back-btn" onclick="location.href='../index.html'">
+        ← 메인페이지
+        </button>
+
+        <div class="title">
+          4월 21일 파일
+        </div>
+
+    </div>
+
+    <div class="dashed-line"></div>
+
+    </div>
+
+<h3>star</h3>
+
+<hr>
+
+<script>
+
+	let star;
+
+	let count = prompt("별의 개수");
+
+	count = parseInt(count); // 문자열을 숫자로 바꿈
+
+	// 이곳에 자바스크립트 코드를 작성하라.
+    if (isNaN(count)) document.write("입력을 잘 못 하셨습니다");
+    else if (count<=0) document.write("입력을 잘 못 하셨습니다"); 
+    
+	else 
+        for (let p=1; p<=count ; p+=1) {
+            document.write("<br>")
+            for (let q=1; q<=p ; q+=1){
+                document.write("*")
+            }
+        }
+
+</script>
+
+</body>
+
+</html>
+

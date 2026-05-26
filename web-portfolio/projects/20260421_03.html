@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>if-else</title>
+<style>
+	.top-header{
+          width:100%;
+          background:#fff;
+          padding:18px 20px 10px;
+        }
+
+        .header-inner{
+          display:flex;
+          justify-content:space-between;
+          align-items:center;
+        }
+
+        .back-btn{
+          background:#bdbdbd;
+          color:#555;
+          border:none;
+          border-radius:10px;
+          padding:12px 18px;
+         font-size:16px;
+         font-weight:600;
+         cursor:pointer;
+        }
+
+        .title{
+          font-size:20px;
+          font-weight:700;
+          color:#111;
+        }
+
+     .dashed-line{
+         margin-top:10px;
+         border-bottom:2px dashed #bdbdbd;
+        }
+</style>
+</head>
+
+<body>
+
+    <div class="top-header">
+
+    <div class="header-inner">
+
+        <button class="back-btn" onclick="location.href='../index.html'">
+        ← 메인페이지
+        </button>
+
+        <div class="title">
+          4월 21일 파일
+        </div>
+
+    </div>
+
+    <div class="dashed-line"></div>
+
+    </div>
+
+<h3>if-else를 이용한 학점 매기기</h3>
+
+<hr>
+
+<script>
+
+	let grade;
+
+	let score = prompt("정희망 님 점수를 입력하세요", 100);
+
+	score = parseInt(score); // 문자열을 숫자로 바꿈
+
+	
+
+	// 이곳에 자바스크립트 코드를 작성하라.
+    if(score >=90) grade='A';
+    else if (score >=80) grade='B';
+    else grade='F';
+
+	
+
+	document.write(score + "점은 " + grade + "입니다.<br>")
+
+</script>
+
+</body>
+
+</html>
+

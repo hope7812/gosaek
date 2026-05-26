@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HOPE's Portfolio</title>
+
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* =========================
+       RESET
+    ========================== */
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      background:#f7f7f7;
+      color:#111;
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+
+    /* =========================
+       배경 스트라이프
+    ========================== */
+
+    body::before{
+      content:"";
+      position:fixed;
+      top:0;
+      left:0;
+      width:140px;
+      height:140px;
+
+      background:
+      repeating-linear-gradient(
+        -45deg,
+        #000 0px,
+        #000 18px,
+        #fff 18px,
+        #fff 36px
+      );
+
+      clip-path:polygon(
+        0 0,
+        100% 0,
+        0 100%
+      );
+
+      z-index:0;
+    }
+
+    body::after{
+      content:"";
+      position:fixed;
+      bottom:0;
+      right:0;
+      width:140px;
+      height:140px;
+
+      background:
+      repeating-linear-gradient(
+        -45deg,
+        #000 0px,
+        #000 18px,
+        #fff 18px,
+        #fff 36px
+      );
+
+      clip-path:polygon(
+        100% 0,
+        100% 100%,
+        0 100%
+      );
+
+      z-index:0;
+    }
+
+    /* =========================
+       LAYOUT
+    ========================== */
+
+    .container{
+      width:100%;
+      max-width:1200px;
+      margin:auto;
+      padding:40px 30px 60px;
+      position:relative;
+      z-index:2;
+    }
+
+    /* =========================
+       TITLE
+    ========================== */
+
+    .title-banner{
+      position:relative;
+      background:#fff6b7;
+      border:3px solid #111;
+      padding:24px 40px;
+      text-align:center;
+      margin-bottom:60px;
+
+      clip-path:polygon(
+        0 0,
+        95% 0,
+        100% 50%,
+        95% 100%,
+        0 100%,
+        5% 50%
+      );
+
+      box-shadow:10px 10px 0 #ffc7d2;
+    }
+
+    .title-banner h1{
+      font-size:4rem;
+      font-weight:800;
+      letter-spacing:-2px;
+    }
+
+    .title-banner span{
+      color:#ef6c8f;
+    }
+
+    /* =========================
+       GRID
+    ========================== */
+
+    .portfolio-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:40px;
+    }
+
+    /* =========================
+       CARD
+    ========================== */
+
+    .card{
+      background:#fff;
+      border:3px solid #111;
+      border-radius:18px;
+      overflow:hidden;
+      position:relative;
+
+      box-shadow:10px 10px 0 #ffc7d2;
+
+      transition:0.25s ease;
+    }
+
+    .card:hover{
+      transform:translate(-6px,-6px);
+
+      box-shadow:
+      16px 16px 0 #ff9db5;
+    }
+
+    /* 카드 링크 */
+
+    .card-link{
+      display:block;
+      width:100%;
+      height:100%;
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .card-link:hover{
+      opacity:0.97;
+    }
+
+    /* 카드 번호 */
+
+    .card-number{
+      position:absolute;
+      top:14px;
+      left:14px;
+
+      background:#ef6c8f;
+      color:white;
+
+      font-size:1rem;
+      font-weight:700;
+
+      padding:4px 14px;
+      border-radius:999px;
+
+      z-index:5;
+    }
+
+    /* 이미지 */
+
+    .card-image{
+      width:100%;
+      height:200px;
+      background:#ececec;
+      overflow:hidden;
+    }
+
+    .card-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    /* 내용 */
+
+    .card-content{
+      padding:22px;
+    }
+
+    .card-date{
+      font-size:2rem;
+      font-weight:700;
+      margin-bottom:14px;
+    }
+
+    .line{
+      width:100%;
+      height:2px;
+
+      background:
+      repeating-linear-gradient(
+        to right,
+        #ffb0c1 0px,
+        #ffb0c1 6px,
+        transparent 6px,
+        transparent 12px
+      );
+
+      margin-bottom:16px;
+    }
+
+    .card-desc{
+      color:#666;
+      line-height:1.7;
+      font-size:0.98rem;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer{
+      margin-top:70px;
+
+      background:#fff8d4;
+
+      border:3px solid #111;
+
+      padding:20px;
+
+      text-align:center;
+
+      font-size:1.8rem;
+      font-weight:600;
+
+      box-shadow:10px 10px 0 #ffc7d2;
+    }
+
+    footer span{
+      color:#ef6c8f;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media(max-width:1000px){
+
+      .portfolio-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .title-banner h1{
+        font-size:3rem;
+      }
+
+    }
+
+    @media(max-width:700px){
+
+      .portfolio-grid{
+        grid-template-columns:1fr;
+      }
+
+      .title-banner h1{
+        font-size:2.2rem;
+      }
+
+      footer{
+        font-size:1.2rem;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- TITLE -->
+
+    <div class="title-banner">
+      <h1><span>HOPE’s</span> Portfolio</h1>
+    </div>
+
+    <!-- GRID -->
+
+    <div class="portfolio-grid" id="portfolioGrid"></div>
+
+    <!-- FOOTER -->
+
+    <footer>
+      &lt;2026gs20520<span>@gosaek.hs.kr</span>&gt;
+    </footer>
+
+  </div>
+
+  <script>
+
+    /* =========================
+       DATA
+    ========================== */
+
+    const portfolioData = [
+
+      {
+        no:"3/10",
+        date:"File 1",
+        image:"https://picsum.photos/600/400?random=1",
+        desc:"웹 디자인 프로젝트 작업물입니다.",
+        link:"projects/20260310_01.html"
+      },
+
+      {
+        no:"3/10",
+        date:"mission",
+        image:"https://picsum.photos/600/400?random=2",
+        desc:"포스터 디자인 및 브랜딩 작업입니다.",
+        link:"projects/20260310_sound.html"
+      },
+
+      {
+        no:"3/17",
+        date:"File 1",
+        image:"https://picsum.photos/600/400?random=3",
+        desc:"피그마 UI/UX 프로토타입입니다.",
+        link:"projects/20260317_01.html"
+      },
+
+      {
+        no:"3/17",
+        date:"File 2",
+        image:"https://picsum.photos/600/400?random=4",
+        desc:"개인 포트폴리오 사이트 제작입니다.",
+        link:"projects/20260317_02.html"
+      },
+
+      {
+        no:"3/17",
+        date:"File 3",
+        image:"https://picsum.photos/600/400?random=5",
+        desc:"브랜드 로고 및 그래픽 작업입니다.",
+        link:"projects/20260317_03.html"
+      },
+
+      {
+        no:"3/17",
+        date:"mission",
+        image:"https://picsum.photos/600/400?random=6",
+        desc:"모바일 앱 UI 디자인 시안입니다.",
+        link:"projects/20260317_04.html"
+      },
+
+      {
+        no:"3/24",
+        date:"File 1",
+        image:"https://picsum.photos/600/400?random=7",
+        desc:"HTML/CSS 인터랙션 구현 예제입니다.",
+        link:"projects/20260324_01.html"
+      },
+
+      {
+        no:"3/24",
+        date:"File 2",
+        image:"https://picsum.photos/600/400?random=8",
+        desc:"포토샵 및 일러스트 작업물입니다.",
+        link:"projects/20260324_02.html"
+      },
+
+      {
+        no:"3/24",
+        date:"File 3",
+        image:"https://picsum.photos/600/400?random=9",
+        desc:"최종 프로젝트 발표 자료입니다.",
+        link:"projects/20260324_03.html"
+      },
+
+      {
+        no:"3/24",
+        date:"mission",
+        image:"https://picsum.photos/600/400?random=10",
+        desc:"최종 프로젝트 발표 자료입니다.",
+        link:"projects/20260324_04.html"
+      },
+
+      {
+        no:"3/31",
+        date:"File 1",
+        image:"https://picsum.photos/600/400?random=11",
+        desc:"최종 프로젝트 발표 자료입니다.",
+        link:"projects/20260331_01.html"
+      },
+
+      {
+        no:"3/31",
+        date:"File 2",
+        image:"https://picsum.photos/600/400?random=12",
+        desc:"최종 프로젝트 발표 자료입니다.",
+        link:"projects/20260331_02.html"
+      },
+
+      {
+        no:"3/31",
+        date:"mission",
+        image:"https://picsum.photos/600/400?random=13",
+        desc:"최종 프로젝트 발표 자료입니다.",
+        link:"projects/20260331_03.html"
+      },
+      
+      {
+        no:"4/07",
+        date:"File 1",
+        image:"https://picsum.photos/600/400?random=14",
+        desc:"최종 프로젝트 발표 자료입니다.",
+        link:"projects/20260407_01.html"
+      },
+      
+      {
+        no:"4/07",
+        date:"File 2",
+        image:"https://picsum.photos/600/400?random=15",
+        desc:"최종 프로젝트 발표 자료입니다.",
+        link:"projects/20260407_02.html"
+      },
+      
+      {
+        no:"4/07",
+        date:"File 3",
+        image:"https://picsum.photos/600/400?random=16",
+        desc:"최종 프로젝트 발표 자료입니다.",
+        link:"projects/20260407_03.html"
+      },
+      
+      {
+        no:"4/07",
+        date:"File 4",
+        image:"https://picsum.photos/600/400?random=17",
+        desc:"최종 프로젝트 발표 자료입니다.",
+        link:"projects/20260407_04.html"
+      },
+      
+      {
+        no:"4/07",
+        date:"mission(1)",
+        image:"https://picsum.photos/600/400?random=18",
+        desc:"최종 프로젝트 발표 자료입니다.",
+        link:"projects/20260407_05.html"
+      },
+      
+      {
+        no:"4/07",
+        date:"mission(2)",
+        image:"https://picsum.photos/600/400?random=19",
+        desc:"최종 프로젝트 발표 자료입니다.",
+        link:"projects/20260407_mission_color.html"
+      },
+      
+      {
+        no:"4/07",
+        date:"mission(3)",
+        image:"https://picsum.photos/600/400?random=20",
+        desc:"최종 프로젝트 발표 자료입니다.",
+        link:"projects/20260407_question.html"
+      },
+      
+      {
+        no:"4/21",
+        date:"File 1",
+        image:"https://picsum.photos/600/400?random=21",
+        desc:"최종 프로젝트 발표 자료입니다.",
+        link:"projects/20260421_01.html"
+      },
+      
+      {
+        no:"4/21",
+        date:"File 2",
+        image:"https://picsum.photos/600/400?random=22",
+        desc:"최종 프로젝트 발표 자료입니다.",
+        link:"projects/20260421_02.html"
+      },
+      
+      {
+        no:"4/21",
+        date:"File 3",
+        image:"https://picsum.photos/600/400?random=23",
+        desc:"최종 프로젝트 발표 자료입니다.",
+        link:"projects/20260421_03.html"
+      },
+      
+      {
+        no:"4/21",
+        date:"File 4",
+        image:"https://picsum.photos/600/400?random=24",
+        desc:"최종 프로젝트 발표 자료입니다.",
+        link:"projects/20260421_04.html"
+      },
+      
+      {
+        no:"4/21",
+        date:"mission",
+        image:"https://picsum.photos/600/400?random=25",
+        desc:"최종 프로젝트 발표 자료입니다.",
+        link:"projects/20260421_mission.html"
+      },
+      
+      {
+        no:"5/12",
+        date:"Test Practice",
+        image:"https://picsum.photos/600/400?random=26",
+        desc:"최종 프로젝트 발표 자료입니다.",
+        link:"projects/test_before.html"
+      }
+
+    ];
+
+    /* =========================
+       RENDER
+    ========================== */
+
+    const grid = document.getElementById("portfolioGrid");
+
+    portfolioData.forEach(item => {
+
+      const card = document.createElement("div");
+
+      card.className = "card";
+
+      card.innerHTML = `
+
+        <a href="${item.link}" 
+           class="card-link">
+
+          <div class="card-number">
+            ${item.no}
+          </div>
+
+          <div class="card-image">
+            <img src="${item.image}" alt="">
+          </div>
+
+          <div class="card-content">
+
+            <div class="card-date">
+              ${item.date}
+            </div>
+
+            <div class="line"></div>
+
+            <div class="card-desc">
+              ${item.desc}
+            </div>
+
+          </div>
+
+        </a>
+
+      `;
+
+      grid.appendChild(card);
+
+    });
+
+  </script>
+
+</body>
+</html>

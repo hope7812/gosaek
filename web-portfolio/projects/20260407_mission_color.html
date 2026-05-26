@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    #red {
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        background-color: red;
+    }
+    #yellow {
+        position: fixed;
+        display: inline-block;
+        height: 200px;
+        width: 200px;
+        text-align: center;
+        background-color: yellow;
+        left: 60px;
+        top: 110px;
+    }
+    #green {
+        position: fixed;
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        background-color: green;
+        left: 110px;
+        top: 110px;
+    }
+    #blue {
+        position: fixed;
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        background-color: blue;
+        left: 110px;
+        top: 210px;
+    }
+    .top-header{
+          width:100%;
+          background:#fff;
+          padding:18px 20px 10px;
+        }
+
+        .header-inner{
+          display:flex;
+          justify-content:space-between;
+          align-items:center;
+        }
+
+        .back-btn{
+          background:#bdbdbd;
+          color:#555;
+          border:none;
+          border-radius:10px;
+          padding:12px 18px;
+         font-size:16px;
+         font-weight:600;
+         cursor:pointer;
+        }
+
+        .title{
+          font-size:20px;
+          font-weight:700;
+          color:#111;
+        }
+
+     .dashed-line{
+         margin-top:10px;
+         border-bottom:2px dashed #bdbdbd;
+        }
+</style>
+</head>
+<body>
+
+    <div class="top-header">
+
+    <div class="header-inner">
+
+        <button class="back-btn" onclick="location.href='../index.html'">
+        ← 메인페이지
+        </button>
+
+        <div class="title">
+          4월 07일 파일
+        </div>
+
+    </div>
+
+    <div class="dashed-line"></div>
+
+    </div>
+    <div id="red">
+    </div>
+    <div id="yellow">
+    </div>
+    <div id="green">
+    </div>
+    <div id="blue">
+    </div>
+</body>
+</html>
